@@ -1,13 +1,14 @@
-import { Container } from 'react-bootstrap'
-import  Header  from './component/Header'
-import Footer from './component/Footer'
+import { Container } from 'react-bootstrap';
+import  Header  from './component/Header';
+import Footer from './component/Footer';
+import HomeScreen from './screens/HomeScreen';
 const App = () => {
   return (
     <>
     < Header />
     <main>
       <Container>
-        <h1>Latest Products</h1>
+        <HomeScreen/>
       </Container>
     </main>
     <Footer/>
