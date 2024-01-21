@@ -1,6 +1,6 @@
 import {Navbar,Nav,Container} from 'react-bootstrap';
 import {FaShoppingCart,FaUser} from 'react-icons/fa';
-
+import {}
 const Header = () => {
   return (
     <header>
