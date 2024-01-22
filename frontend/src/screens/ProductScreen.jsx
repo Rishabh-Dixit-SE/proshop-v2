@@ -29,6 +29,7 @@ const product=products.find((x)=>x._id===productId)
      </Col>
 
 <Col md={3}>
+<ListGroup variant='flush'>
              <ListGroup.Item>  
               <h5>  Price: ${product.price}</h5>
             </ListGroup.Item>
@@ -45,7 +46,7 @@ const product=products.find((x)=>x._id===productId)
 
 <Button className='btn-block' type='button' disabled={product.countInStock === 0}>Add To Cart</Button>
 </ListGroup.Item>
-            
+</ListGroup>  
 </Col>
 
 
