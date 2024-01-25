@@ -1,7 +1,9 @@
 console.log("Backend server is running");
 import express  from 'express';
 import Products  from './data/products.js';
-const port=5000;
+import dotenv  from 'dotenv';
+dotenv.config();
+const port=process.env.PORT || 5000;
 const app=express();
 
 
@@ -14,9 +16,10 @@ app.get("/api/products",(req,res)=>{
 })
 
 app.get("/api/products/:id",(req,res)=>{
-    const productId=req.params.id;
-    const product=Products.find((p)=>p._id===productId);
+    const ProductId=req.params.id;
+    const product=Products.find((x)=>x._id===ProductId);
     res.json(product)
+
 })
 
 app.listen(port,()=>{console.log(`server is running on port ${port}`) });
