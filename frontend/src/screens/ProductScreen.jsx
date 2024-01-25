@@ -1,14 +1,27 @@
 import {useParams} from 'react-router-dom';
-import products from "../Products"
+import {useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {Row,Col,Image,ListGroup,Card,Button, ListGroupItem} from "react-bootstrap"
 import React from 'react'
 import Rating from '../component/Rating';
+import axios from 'axios';
 
 const ProductScreen = () => {
+const [product,setProduct]=useState({});
     //url have id that will goe inside productId
 const {id:productId} = useParams();
-const product=products.find((x)=>x._id===productId)
+useEffect(()=>{
+    const fetchProduct=async()=>{
+        const {data}=await axios.get(`/api/products/${productId}`);
+        setProduct(data);
+    }
+    fetchProduct();
+},[productId]);
+
+
+{/*
+here we are  using useEffect that why we don't need to use array
+const product=products.find((x)=>x._id===productId) */}
     return (
    <>
    <Link to='/' className='btn btn-light my-3'>Go Back</Link>
