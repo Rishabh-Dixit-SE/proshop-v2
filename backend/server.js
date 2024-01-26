@@ -18,13 +18,13 @@ res.send('Server js is Running');
 })
 
 app.get("/api/products",(req,res)=>{
-    res.json(Products)
+    res.json(Products);
 })
 
 app.get("/api/products/:id",(req,res)=>{
     const ProductId=req.params.id;
     const product=Products.find((x)=>x._id===ProductId);
-    res.json(product)
+    res.json(product);
 
 })
 
