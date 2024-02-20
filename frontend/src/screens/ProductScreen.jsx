@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {useParams,useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import {Form,Row,Col,Image,ListGroup,Card,Button, ListGroupItem} from "react-bootstrap"
+import {Form,Row,Col,Image,ListGroup,Button } from "react-bootstrap"
 import React from 'react'
 import Rating from '../component/Rating';
 import { useGetProductDetailsQuery } from '../slices/productsApiSlices';
